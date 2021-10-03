@@ -14,4 +14,4 @@ let studentHeight = 179
 let studentWeight = 77.5612
 let studentAge = 24
 
-print("Owner info: \nname: \(studentName)\nheigh: \(studentHeight)\nweight:\(studentWeight)\nage:\(studentAge)")
+print("Student info: \nname: \(studentName)\nheigh: \(studentHeight)\nweight:\(studentWeight)\nage:\(studentAge)")
