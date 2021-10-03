@@ -7,9 +7,9 @@
         Int8.max;Int8.min
         UInt8.max;UInt8.min
     2. Создать три константы (Int,Float,Double)
-        2.1. Создать константу суммы всех трех из п2 (Принудительный тип Int)
-        2.2. Создать константу суммы всех трех из п2 (Принудительный тип Float)
-        2.3. Создать константу суммы всех трех из п2 (Принудительный тип Double)
+        2.1. Создать константу суммы всех трех из п2 (тип Int)
+        2.2. Создать константу суммы всех трех из п2 (тип Float)
+        2.3. Создать константу суммы всех трех из п2 (тип Double)
     3. Создать проверки
         3.1. (Если 2.1 < 2.3 --> println 2.3 точнее)
         3.1. (Если 2.1 > 2.3 --> println любую строку)
@@ -17,11 +17,11 @@
 
 print("Int.max: \(Int.max), \nInt.min: \(Int.min), \nInt8.max: \(Int8.max), \nInt8.min: \(Int8.min), \nUInt8.max: \(UInt8.max), \nUInt8.min: \(UInt8.min)")
 
-let intValue: Int = 921
+let intValue = 921
 let floatValue: Float = 8712.2000009
-let doubleValue: Double = 123.9987654125371293231
+let doubleValue = 123.9987654125371293231
 
-let sumWithTypeInt = intValue + Int(floatValue) + Int(doubleValue)
+let sumWithTypeInt = Int(Double(intValue) + Double(floatValue) + Double(doubleValue))
 let sumWithTypeFloat = Float(intValue) + floatValue + Float(doubleValue)
 let sumWithTypeDouble = Double(intValue) + Double(floatValue) + doubleValue
 
