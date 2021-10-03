@@ -16,6 +16,7 @@
  */
 
 print("Int.max: \(Int.max), \nInt.min: \(Int.min), \nInt8.max: \(Int8.max), \nInt8.min: \(Int8.min), \nUInt8.max: \(UInt8.max), \nUInt8.min: \(UInt8.min)")
+
 let intValue: Int = 921
 let floatValue: Float = 8712.2000009
 let doubleValue: Double = 123.9987654125371293231
