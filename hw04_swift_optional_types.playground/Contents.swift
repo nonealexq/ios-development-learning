@@ -78,7 +78,6 @@ if statusCode404 != 200 {
     print(message404!)
 }
 
-
 var http200: (Int, String?, String?) = (200, "You got it!", nil)
 var (statusCode200, message200, errorMessage200) = http200
 
@@ -87,7 +86,6 @@ if statusCode200 == 200 {
 } else {
     print("Oops, status code: \(statusCode200), failed with error message:  \(errorMessage200 ?? defaultErrorMessage)")
 }
-
 
 var httpConnectionError: (Int?, String?, String?) = (nil, nil, "Oops, connection error")
 var (statusCodeConnectionError, messageConnectionError, errorMessageConnectionError) = httpConnectionError
@@ -110,7 +108,6 @@ var (firstStudentName, firstStudentCarRegNumber, firstStudentExamMark) = firstSt
 var secondStudentTaskInfo: (String, String?, String?) = ("Ivan", nil, nil)
 var (secondStudentName, secondStudentCarRegNumber, secondStudentExamMark) = secondStudentTaskInfo
 
-
 /*
  И тут начался экзамен,
  У первого студента нет машины, но он сдал экзамен на отлично
@@ -119,7 +116,6 @@ var (secondStudentName, secondStudentCarRegNumber, secondStudentExamMark) = seco
 
 firstStudentExamMark       = "5"
 secondStudentCarRegNumber  = "АА891А196"
-
 
 print("\nInfo about first student:\n" +
         "\tname: \(firstStudentName)\n" +
@@ -130,4 +126,3 @@ print("\nInfo about second student:\n" +
         "\tname: \(secondStudentName)\n" +
         "\tcar reg number: \(secondStudentCarRegNumber ?? withoutCarText)\n" +
         "\texam mark: \(secondStudentExamMark ?? withoutExamMarkText)")
-
