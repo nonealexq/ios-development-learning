@@ -20,46 +20,45 @@
 /*
  п.1 :
  */
-let valuesTuple: (String, Int?, String, Double?, String) = ("1233", nil, "just a string", 9123.231, "96167fc9-2647-42e3-ac00-54e1f8980da2")
-let (firstValue, secondValue, thirdValue, fourthValue, fifthValue) = valuesTuple
+let valuesTuple: (firstValue: String, secondValue: Int?, thirdValue: String, fourthValue: Double?, fifthValue: String) = ("1233", nil, "just a string", 9123.231, "96167fc9-2647-42e3-ac00-54e1f8980da2")
 
 var sumStrings: Int     = 0
 let elseMessage: String = "is not a number"
 
 // If firstValue ?? Int --> add to sumStrings
-if Int(firstValue) != nil {
-    sumStrings = sumStrings + Int(firstValue)!
+if Int(valuesTuple.firstValue) != nil {
+    sumStrings = sumStrings + Int(valuesTuple.firstValue)!
     print(sumStrings)
 } else {
-    print(firstValue, elseMessage)
+    print(valuesTuple.firstValue, elseMessage)
 }
 
 // If secondValue ?? Int --> add to sumStrings
-if let starSecond = secondValue {
+if let starSecond = valuesTuple.secondValue {
     sumStrings = sumStrings + starSecond
 } else {
-    print(secondValue ?? "empty", elseMessage)
+    print(valuesTuple.secondValue ?? "empty", elseMessage)
 }
 
 // If thirdValue ?? Int --> add to sumStrings
-if Int(thirdValue) != nil {
-    sumStrings = sumStrings + Int(thirdValue)!
+if Int(valuesTuple.thirdValue) != nil {
+    sumStrings = sumStrings + Int(valuesTuple.thirdValue)!
 } else {
-    print(thirdValue, elseMessage)
+    print(valuesTuple.thirdValue, elseMessage)
 }
 
 // If fourthValue ?? Int --> add to sumStrings
-if let starFouth = fourthValue{
+if let starFouth = valuesTuple.fourthValue{
     sumStrings = sumStrings + Int(starFouth)
 } else {
-    print(fourthValue ?? "empty", elseMessage)
+    print(valuesTuple.fourthValue ?? "empty", elseMessage)
 }
 
 // If fifthValue ?? Int --> add to sumStrings
-if Int(fifthValue) != nil {
-    sumStrings = sumStrings + Int(fifthValue)!
+if Int(valuesTuple.fifthValue) != nil {
+    sumStrings = sumStrings + Int(valuesTuple.fifthValue)!
 } else {
-    print(fifthValue, elseMessage)
+    print(valuesTuple.fifthValue, elseMessage)
 }
 
 print("Summary: \(sumStrings)")
@@ -67,33 +66,17 @@ print("Summary: \(sumStrings)")
 /*
  п.2 :
  */
-let defaultErrorMessage: String = "Default error message"
+let defaultErrorMessage: String     = "Default error message"
+let defaultSuccessMessage: String   = "Default success message"
 
-var http404: (Int, String?, String?) = (404, nil, "Page not found :(")
-var (statusCode404, message404, errorMessage404) = http404
+var response: (statusCode: Int, message: String?, errorMessage: String?)
 
-if statusCode404 != 200 {
-    print("Oops, status code: \(statusCode404), failed with error message:  \(errorMessage404 ?? defaultErrorMessage)")
+response.statusCode = 404; response.message = nil; response.errorMessage = "Page not found :("
+
+if  (response.statusCode < 200) || (response.statusCode > 399) {
+    print("Oops, status code: \(response.statusCode), failed with error message:  \(response.errorMessage ?? defaultErrorMessage)")
 } else {
-    print(message404!)
-}
-
-var http200: (Int, String?, String?) = (200, "You got it!", nil)
-var (statusCode200, message200, errorMessage200) = http200
-
-if statusCode200 == 200 {
-    print("Status code: \(statusCode200) with message: \(message200!)")
-} else {
-    print("Oops, status code: \(statusCode200), failed with error message:  \(errorMessage200 ?? defaultErrorMessage)")
-}
-
-var httpConnectionError: (Int?, String?, String?) = (nil, nil, "Oops, connection error")
-var (statusCodeConnectionError, messageConnectionError, errorMessageConnectionError) = httpConnectionError
-
-if statusCodeConnectionError == nil {
-    print("\(errorMessageConnectionError ?? defaultErrorMessage)")
-} else {
-    print("Connection error with default error message \(defaultErrorMessage)")
+    print(response.message ?? defaultSuccessMessage)
 }
 
 /*
@@ -102,11 +85,8 @@ if statusCodeConnectionError == nil {
 var withoutCarText: String      = "No car"
 var withoutExamMarkText: String = "Didn't show up for the exam"
 
-var firstStudentTaskInfo: (String, String?, String?) = ("Peter", nil, nil)
-var (firstStudentName, firstStudentCarRegNumber, firstStudentExamMark) = firstStudentTaskInfo
-
-var secondStudentTaskInfo: (String, String?, String?) = ("Ivan", nil, nil)
-var (secondStudentName, secondStudentCarRegNumber, secondStudentExamMark) = secondStudentTaskInfo
+var firstStudentInfo: (name: String?, carRegNumber: String?, grade: String?) = (nil, nil, nil)
+var secondStudentInfo: (name: String?, carRegNumber: String?, grade: String?) = (nil, nil, nil)
 
 /*
  И тут начался экзамен,
@@ -114,15 +94,18 @@ var (secondStudentName, secondStudentCarRegNumber, secondStudentExamMark) = seco
  У второго студента есть машина, но он не явился на экзамен
  */
 
-firstStudentExamMark       = "5"
-secondStudentCarRegNumber  = "АА891А196"
+firstStudentInfo.name           = "Peter"
+firstStudentInfo.grade          = "5"
+
+secondStudentInfo.name          = "Ivan"
+secondStudentInfo.carRegNumber  = "АА891А196"
 
 print("\nInfo about first student:\n" +
-        "\tname: \(firstStudentName)\n" +
-        "\tcar reg number: \(firstStudentCarRegNumber ?? withoutCarText)\n" +
-        "\texam mark: \(firstStudentExamMark ?? withoutExamMarkText)")
+      "\tname: \(secondStudentInfo.name ?? "Name is empty")\n" +
+      "\tcar reg number: \(secondStudentInfo.carRegNumber ?? withoutCarText)\n" +
+      "\texam mark: \(secondStudentInfo.grade ?? withoutExamMarkText)")
 
 print("\nInfo about second student:\n" +
-        "\tname: \(secondStudentName)\n" +
-        "\tcar reg number: \(secondStudentCarRegNumber ?? withoutCarText)\n" +
-        "\texam mark: \(secondStudentExamMark ?? withoutExamMarkText)")
+      "\tname: \(secondStudentInfo.name ?? "Name is empty")\n" +
+      "\tcar reg number: \(secondStudentInfo.carRegNumber ?? withoutCarText)\n" +
+      "\texam mark: \(secondStudentInfo.grade ?? withoutExamMarkText)")
