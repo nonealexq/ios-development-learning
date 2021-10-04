@@ -101,9 +101,9 @@ secondStudentInfo.name          = "Ivan"
 secondStudentInfo.carRegNumber  = "АА891А196"
 
 print("\nInfo about first student:\n" +
-      "\tname: \(secondStudentInfo.name ?? "Name is empty")\n" +
-      "\tcar reg number: \(secondStudentInfo.carRegNumber ?? withoutCarText)\n" +
-      "\texam mark: \(secondStudentInfo.grade ?? withoutExamMarkText)")
+      "\tname: \(firstStudentInfo.name ?? "Name is empty")\n" +
+      "\tcar reg number: \(firstStudentInfo.carRegNumber ?? withoutCarText)\n" +
+      "\texam mark: \(firstStudentInfo.grade ?? withoutExamMarkText)")
 
 print("\nInfo about second student:\n" +
       "\tname: \(secondStudentInfo.name ?? "Name is empty")\n" +
