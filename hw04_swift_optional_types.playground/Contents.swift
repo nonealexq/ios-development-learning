@@ -20,8 +20,8 @@
 /*
  п.1 :
  */
-let stringTuple: (String, Int?, String, Double?, String) = ("1233", nil, "just a string", 9123.231, "96167fc9-2647-42e3-ac00-54e1f8980da2")
-let (firstValue, secondValue, thirdValue, fourthValue, fifthValue) = stringTuple
+let valuesTuple: (String, Int?, String, Double?, String) = ("1233", nil, "just a string", 9123.231, "96167fc9-2647-42e3-ac00-54e1f8980da2")
+let (firstValue, secondValue, thirdValue, fourthValue, fifthValue) = valuesTuple
 
 var sumStrings: Int = 0
 let elseMessage: String = "is not a number"
