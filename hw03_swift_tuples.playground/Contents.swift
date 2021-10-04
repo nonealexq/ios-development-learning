@@ -14,8 +14,8 @@
  */
 
 
-let firstStudentSportsInfo = (maxPushUps: 30,maxPullUps: 15, maxSqats: 10)
-let secondStudentSportsInfo = (maxPushUps: 45,maxPullUps: 15, maxSqats: 11)
+let firstStudentSportsInfo = (maxPushUps: 30, maxPullUps: 15, maxSqats: 10)
+let secondStudentSportsInfo = (maxPushUps: 45, maxPullUps: 15, maxSqats: 11)
 
 print("Print clear tuple of first student's sport info: \(firstStudentSportsInfo)")
 print("Print clear tuple of second student's sport info: \(secondStudentSportsInfo)")
