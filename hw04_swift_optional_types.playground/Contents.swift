@@ -57,7 +57,7 @@ print("Summary: \(sumStrings)")
 /*
  п.2 :
  */
-let defaultErrorMessage = "Default error message"
+let defaultErrorMessage: String = "Default error message"
 
 var http404: (Int, String?, String?) = (404, nil, "Page not found :(")
 var (statusCode404, message404, errorMessage404) = http404
