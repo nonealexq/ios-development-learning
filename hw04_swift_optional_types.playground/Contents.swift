@@ -23,34 +23,44 @@
 let valuesTuple: (String, Int?, String, Double?, String) = ("1233", nil, "just a string", 9123.231, "96167fc9-2647-42e3-ac00-54e1f8980da2")
 let (firstValue, secondValue, thirdValue, fourthValue, fifthValue) = valuesTuple
 
-var sumStrings: Int = 0
+var sumStrings: Int     = 0
 let elseMessage: String = "is not a number"
 
 // If firstValue ?? Int --> add to sumStrings
 if Int(firstValue) != nil {
     sumStrings = sumStrings + Int(firstValue)!
     print(sumStrings)
-} else { print(firstValue, elseMessage) }
+} else {
+    print(firstValue, elseMessage)
+}
 
 // If secondValue ?? Int --> add to sumStrings
 if let starSecond = secondValue {
     sumStrings = sumStrings + starSecond
-} else { print(secondValue ?? "empty", elseMessage) }
+} else {
+    print(secondValue ?? "empty", elseMessage)
+}
 
 // If thirdValue ?? Int --> add to sumStrings
 if Int(thirdValue) != nil {
     sumStrings = sumStrings + Int(thirdValue)!
-} else { print(thirdValue, elseMessage) }
+} else {
+    print(thirdValue, elseMessage)
+}
 
 // If fourthValue ?? Int --> add to sumStrings
 if let starFouth = fourthValue{
     sumStrings = sumStrings + Int(starFouth)
-} else { print(fourthValue ?? "empty", elseMessage) }
+} else {
+    print(fourthValue ?? "empty", elseMessage)
+}
 
 // If fifthValue ?? Int --> add to sumStrings
 if Int(fifthValue) != nil {
     sumStrings = sumStrings + Int(fifthValue)!
-} else { print(fifthValue, elseMessage) }
+} else {
+    print(fifthValue, elseMessage)
+}
 
 print("Summary: \(sumStrings)")
 
@@ -64,7 +74,9 @@ var (statusCode404, message404, errorMessage404) = http404
 
 if statusCode404 != 200 {
     print("Oops, status code: \(statusCode404), failed with error message:  \(errorMessage404 ?? defaultErrorMessage)")
-} else { print(message404!) }
+} else {
+    print(message404!)
+}
 
 
 var http200: (Int, String?, String?) = (200, "You got it!", nil)
@@ -72,7 +84,9 @@ var (statusCode200, message200, errorMessage200) = http200
 
 if statusCode200 == 200 {
     print("Status code: \(statusCode200) with message: \(message200!)")
-} else { print("Oops, status code: \(statusCode200), failed with error message:  \(errorMessage200 ?? defaultErrorMessage)") }
+} else {
+    print("Oops, status code: \(statusCode200), failed with error message:  \(errorMessage200 ?? defaultErrorMessage)")
+}
 
 
 var httpConnectionError: (Int?, String?, String?) = (nil, nil, "Oops, connection error")
@@ -80,13 +94,14 @@ var (statusCodeConnectionError, messageConnectionError, errorMessageConnectionEr
 
 if statusCodeConnectionError == nil {
     print("\(errorMessageConnectionError ?? defaultErrorMessage)")
-} else { print("Connection error with default error message \(defaultErrorMessage)") }
+} else {
+    print("Connection error with default error message \(defaultErrorMessage)")
+}
 
 /*
  п.3 :
  */
-
-var withoutCarText: String  = "No car"
+var withoutCarText: String      = "No car"
 var withoutExamMarkText: String = "Didn't show up for the exam"
 
 var firstStudentTaskInfo: (String, String?, String?) = ("Peter", nil, nil)
