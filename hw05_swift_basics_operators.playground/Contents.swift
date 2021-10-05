@@ -43,7 +43,6 @@ for currentMonth in dateMonthBegin...dateMonthEnd {
     } else {
         secondLeft += 30 * 86400
     }
-    
 }
 
 
@@ -62,30 +61,24 @@ let qartar_4: Qartar    = (qartar_3.end, qartar_3.end + 3 * 30 * 86400, 4)
 if (secondLeft >= qartar_1.begin) && (secondLeft <= qartar_1.end) {
     currentQartar = qartar_1.number
 }
-
 else if (secondLeft >= qartar_2.begin) && (secondLeft <= qartar_2.end) {
     currentQartar = qartar_2.number
 }
-
 else if (secondLeft >= qartar_3.begin) && (secondLeft <= qartar_3.end) {
     currentQartar = qartar_3.number
 }
-
 else if (secondLeft >= qartar_4.begin) && (secondLeft <= qartar_4.end) {
     currentQartar = qartar_4.number
 }
-
 else {
     print("Something is going wrong")
 }
-
 print("Date of birthday in \(currentQartar) qartar")
 
 
 /*
  п.3
  */
-
 var example: Int = (((2 + 1) * 14 / 2) % 2 + secondLeft) % 9
 example += -100
 example -= 1
