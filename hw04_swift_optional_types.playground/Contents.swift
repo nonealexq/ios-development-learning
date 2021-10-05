@@ -86,9 +86,9 @@ let defaultSuccessMessage: String   = "Default success message"
 var response: (statusCode: Int, message: String?, errorMessage: String?)
 
 // Дурной тон ставить ;, лучше с новой строки
-response.statusCode = 404;
-response.message = nil;
-response.errorMessage = "Page not found :("
+response.statusCode     = 404;
+response.message        = nil;
+response.errorMessage   = "Page not found :("
 
 // По условию проверка на 200, можно конечно и так, но лучше явно как в задаче)
 if  (response.statusCode < 200) || (response.statusCode > 399) {
