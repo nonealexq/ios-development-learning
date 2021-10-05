@@ -45,11 +45,9 @@ for currentMonth in dateMonthBegin...dateMonthEnd {
     }
 }
 
-
 /*
  п.2
  */
-
 let qartalCount = 4
 
 typealias Qartar        = (begin: Int, end: Int, number: Int)
