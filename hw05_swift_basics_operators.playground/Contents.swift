@@ -84,9 +84,8 @@ example += -100
 example -= 1
 
 /*
- п.3
+ п.4
  */
-
 for i in 1...8 {
     for j in 1...8 {
         ((i + j) % 2 == 0) ? print("\(i) + \(j) is black") : print("\(i) + \(j) is white")
