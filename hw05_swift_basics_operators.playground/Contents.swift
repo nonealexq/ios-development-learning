@@ -13,19 +13,22 @@
 
 
 /*
- п.1
+ 1. Посчитать через арифметические выражения кол-во секунд от начала года до дня рождения (01.01.2021 -- 10.09.2021)
  */
-let dateDayBegin:Int    = 1
-let dateMonthBegin:Int  = 1
+let dateDayBegin: Int       = 1
+let dateMonthBegin: Int     = 1
 
-let dateDayEnd:Int      = 26
-let dateMonthEnd:Int    = 9
+let dateDayEnd: Int         = 26
+let dateMonthEnd: Int       = 9
 
-var currentDay:Int      = 0
-var currentMonth:Int    = 0
-var currentQartar: Int  = 0
+var currentDay: Int         = 0
+var currentMonth: Int       = 0
+var currentQartar: Int      = 0
 
-var secondLeft:Int      = 0
+var secondLeft: Int         = 0
+
+let secondInDay             = 86400         // Сколько секунд в одном дне
+let dayInMonth              = 30            // Сколько дней в месяце
 
 /*
  Если не использовать либы и представить, что в каждом месяце всегда 30 дней:
@@ -34,53 +37,37 @@ var secondLeft:Int      = 0
 for currentMonth in dateMonthBegin...dateMonthEnd {
     if currentMonth == dateMonthEnd {
         for currentDay in currentDay...dateDayEnd {
-            secondLeft += 86400
+            secondLeft += secondInDay
             //print(currentDay)
             if currentDay == dateDayEnd {
                 print("Second left: \(secondLeft)")
             }
         }
     } else {
-        secondLeft += 30 * 86400
+        secondLeft += dayInMonth * secondInDay
     }
 }
 
 /*
- п.2
+ 2. Посчитать в каком квартале мы родились
+     2.1. Вывывести в консоль
  */
-typealias Qartar        = (begin: Int, end: Int, number: Int)
-let qartar_1: Qartar    = (0, 3 * 30 * 86400, 1)
-let qartar_2: Qartar    = (qartar_1.end, qartar_1.end + 3 * 30 * 86400, 2)
-let qartar_3: Qartar    = (qartar_2.end, qartar_2.end + 3 * 30 * 86400, 3)
-let qartar_4: Qartar    = (qartar_3.end, qartar_3.end + 3 * 30 * 86400, 4)
-
-if (secondLeft >= qartar_1.begin) && (secondLeft <= qartar_1.end) {
-    currentQartar = qartar_1.number
-}
-else if (secondLeft >= qartar_2.begin) && (secondLeft <= qartar_2.end) {
-    currentQartar = qartar_2.number
-}
-else if (secondLeft >= qartar_3.begin) && (secondLeft <= qartar_3.end) {
-    currentQartar = qartar_3.number
-}
-else if (secondLeft >= qartar_4.begin) && (secondLeft <= qartar_4.end) {
-    currentQartar = qartar_4.number
-}
-else {
-    print("Something is going wrong")
-}
-print("Date of birthday in \(currentQartar) qartar")
-
+let monthOfBirthday = 9
+var quaterOfBirthday = Int((Double(monthOfBirthday - 1) / 3) + 1)
+print("The student was born in \(quaterOfBirthday) qartar")
 
 /*
- п.3
+ 3. Заюзать все арифметические выражения в переменной (постфиксы/префиксы) унарные операторы
  */
 var example: Int = (((2 + 1) * 14 / 2) % 2 + secondLeft) % 9
 example += -100
 example -= 1
 
 /*
- п.4
+ 4. Шахматная доска, в ней 64 клеточки
+     4.1. от 1 до 8 и там от 1 до 8
+     4.2. сказать какой цвет любой клетки
+ 
     _ --> white
     * --> black
 ^ y
@@ -93,10 +80,11 @@ example -= 1
 3  |*|_|*|_|*|_|*|_|
 2  |_|*|_|*|_|*|_|*|
 1  |*|_|*|_|*|_|*|_|
-|---1-2-3-4-5-6-7-8--------> i
+|---1-2-3-4-5-6-7-8--------> x
  */
-for i in 1...8 {
+for x in 1...8 {
     for j in 1...8 {
-        ((i + j) % 2 == 0) ? print("\(i) + \(j) is black") : print("\(i) + \(j) is white")
+        let color = ((x + j) % 2 == 0) ? "black" : "white"
+        print("\(x) + \(j) is \(color)")
     }
 }
